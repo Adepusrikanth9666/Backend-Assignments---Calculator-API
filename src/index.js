@@ -43,8 +43,7 @@ app.post("/add", (req, res) => {
       sum: undefined
     });
     return;
-  }
-  if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
+  } else if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
     let sum = parseFloat(num1) + parseFloat(num2);
     if (sum < 1000000) {
       res.send({
@@ -62,8 +61,8 @@ app.post("/add", (req, res) => {
   }
 });
 app.post("/sub", (req, res) => {
-  let paese1 = req.params.num1;
-  let paese2 = req.params.num2;
+  // let paese1 = req.params.num1;
+  // let paese2 = req.params.num2;
   let num1 = req.body.num1;
   let num2 = req.body.num2;
   if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
@@ -89,8 +88,7 @@ app.post("/sub", (req, res) => {
       sum: undefined
     });
     return;
-  }
-  if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
+  } else if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
     res.send({
       status: "success",
       message: "the difference of given two numbers",
@@ -100,8 +98,8 @@ app.post("/sub", (req, res) => {
 });
 
 app.post("/multiply", (req, res) => {
-  let paese1 = req.params.num1;
-  let paese2 = req.params.num2;
+  // let paese1 = req.params.num1;
+  // let paese2 = req.params.num2;
   let num1 = req.body.num1;
   let num2 = req.body.num2;
   if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
@@ -127,9 +125,7 @@ app.post("/multiply", (req, res) => {
       sum: undefined
     });
     return;
-  }
-
-  if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
+  } else if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
     let multiply = parseFloat(num1) * parseFloat(num2);
 
     if (multiply > 1000000) {
@@ -148,8 +144,8 @@ app.post("/multiply", (req, res) => {
   }
 });
 app.post("/divide", (req, res) => {
-  let paese1 = req.params.num1;
-  let paese2 = req.params.num2;
+  // let paese1 = req.params.num1;
+  // let paese2 = req.params.num2;
   let num1 = req.body.num1;
   let num2 = req.body.num2;
   if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
@@ -183,8 +179,7 @@ app.post("/divide", (req, res) => {
       sum: undefined
     });
     return;
-  }
-  if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
+  } else if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
     res.send({
       status: "success",
       message: "The division of given numbers",
