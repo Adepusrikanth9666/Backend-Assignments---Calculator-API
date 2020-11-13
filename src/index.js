@@ -45,7 +45,7 @@ app.post("/add", (req, res) => {
     return;
   }
   if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
-    let sum = parseFloat(parseFloat(num1) + parseFloat(num2));
+    let sum = parseFloat(num1) + parseFloat(num2);
     if (sum < 1000000) {
       res.send({
         status: "success",
@@ -62,8 +62,8 @@ app.post("/add", (req, res) => {
   }
 });
 app.post("/sub", (req, res) => {
-  let paese1 = req.params.num1;
-  let paese2 = req.params.num2;
+  // let paese1 = req.params.num1;
+  // let paese2 = req.params.num2;
   let num1 = req.body.num1;
   let num2 = req.body.num2;
   if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
@@ -94,14 +94,14 @@ app.post("/sub", (req, res) => {
     res.send({
       status: "success",
       message: "the difference of given two numbers",
-      difference: parseFloat(parseFloat(num1) - parseFloat(num2))
+      difference: parseFloat(num1) - parseFloat(num2)
     });
   }
 });
 
 app.post("/multiply", (req, res) => {
-  let paese1 = req.params.num1;
-  let paese2 = req.params.num2;
+  // let paese1 = req.params.num1;
+  // let paese2 = req.params.num2;
   let num1 = req.body.num1;
   let num2 = req.body.num2;
   if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
@@ -130,7 +130,7 @@ app.post("/multiply", (req, res) => {
   }
 
   if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
-    var multiply = parseFloat(parseFloat(num1) * parseFloat(num2));
+    var multiply = parseFloat(num1) * parseFloat(num2);
 
     if (multiply > 1000000) {
       res.send({
@@ -148,8 +148,7 @@ app.post("/multiply", (req, res) => {
   }
 });
 app.post("/divide", (req, res) => {
-  let paese1 = req.params.num1;
-  let paese2 = req.params.num2;
+  
   let num1 = req.body.num1;
   let num2 = req.body.num2;
   if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
@@ -188,7 +187,7 @@ app.post("/divide", (req, res) => {
     res.send({
       status: "success",
       message: "The division of given numbers",
-      result: parseFloat(parseFloat(num1) / parseFloat(num2))
+      result: parseFloat(num1) / parseFloat(num2)
     });
   }
 });
