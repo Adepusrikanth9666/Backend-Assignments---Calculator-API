@@ -91,7 +91,7 @@ app.post("/sub", (req, res) => {
     });
     return;
   }
-  if (!isNaN(parseFloat(num1) && !isNaN(parseFloat(num1)))) {
+  if (!isNaN(parseFloat(num1)) && !isNaN(parseFloat(num1))) {
     res.send({
       status: "success",
       message: "the difference of given two numbers",
@@ -114,11 +114,12 @@ app.post("/multiply", (req, res) => {
     });
     return;
   }
-  if (isNaN(num1) || isNan(num2)) {
+
+  if (isNaN(num1) || isNaN(num2)) {
     res.send({
       status: "failure",
       message: "Invalid data types",
-      sum: undefined
+      result: undefined
     });
     return;
   }
@@ -149,8 +150,6 @@ app.post("/multiply", (req, res) => {
       return;
     }
   }
-
-
 });
 
 app.post("/divide", (req, res) => {
@@ -177,8 +176,8 @@ app.post("/divide", (req, res) => {
 
   if (isNaN(num1) || isNaN(num2)) {
     res.send({
-      status: "error",
-      message: "Invalid data type",
+      status: "failure",
+      message: "Invalid data types",
       result: undefined
     });
     return;
