@@ -13,11 +13,10 @@ app.use(bodyParser.json());
 // your code goes here
 
 app.get("/", (req, res) => {
-  res.send("Hello world!.");
+  res.send("Hello world!");
 });
 app.post("/add", (req, res) => {
-  //  let paese1 = req.params.num1;
-  //   let paese2 = req.params.num2;
+
   let num1 = req.body.num1;
   let num2 = req.body.num2;
 
@@ -35,6 +34,7 @@ app.post("/add", (req, res) => {
       message: "Underflow",
       sum: undefined
     });
+return;
   }
   if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
     let sum = parseFloat(num1) + parseFloat(num2);
@@ -44,6 +44,7 @@ app.post("/add", (req, res) => {
         message: "the sum of given two numbers",
         sum: sum
       });
+      return;
     } else {
       res.send({
         status: "error",
