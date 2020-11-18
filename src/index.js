@@ -36,7 +36,7 @@ app.post("/add", (req, res) => {
     });
 return;
   }
-  if (!NaN(parseFloat(num1) && !NaN(parseFloat(num2)))) {
+  if (!isNaN(parseFloat(num1) && !isNaN(parseFloat(num2)))) {
     let sum = parseFloat(num1) + parseFloat(num2);
     if (sum < 1000000) {
       res.send({
