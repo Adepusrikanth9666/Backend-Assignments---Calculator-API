@@ -22,7 +22,7 @@ app.post("/add", (req, res) => {
 
   if (parseFloat(num1) > 1000000 || parseFloat(num2) > 1000000) {
     res.send({
-      status: "error",
+      status: "Error",
       message: "Overflow",
       sum: undefined
     });
@@ -30,19 +30,11 @@ app.post("/add", (req, res) => {
   }
   if (parseFloat(num2) < -1000000 || parseFloat(num1) < -1000000) {
     res.send({
-      status: "error",
+      status: "Error",
       message: "Underflow",
       sum: undefined
     });
 return;
-  }
-  if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
-    res.send({
-      status: "error",
-      message: "Invalid data type",
-      sum: undefined
-    });
-    return;
   }
   if (!isNaN(parseFloat(num1) && !isNaN(parseFloat(num2)))) {
     let sum = parseFloat(num1) + parseFloat(num2);
@@ -62,7 +54,14 @@ return;
       return;
     }
   } 
-  
+  else if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
+    res.send({
+      status: "failure",
+      message: "Invalid data type",
+      sum: undefined
+    });
+    return;
+  }
 });
 //subtraction
 app.post("/sub", (req, res) => {
