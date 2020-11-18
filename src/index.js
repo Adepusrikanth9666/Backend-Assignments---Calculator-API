@@ -57,10 +57,10 @@ return;
   else if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
     res.send({
       status: "failure",
-      message: "Invalid data type",
+      message: "Invalid data types",
       sum: undefined
     });
-    return;
+    
   }
 });
 //subtraction
