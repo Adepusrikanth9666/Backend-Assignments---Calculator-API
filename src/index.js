@@ -53,7 +53,7 @@ return;
       });
       return;
     }
-  } else if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
+  } if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
     res.send({
       status: "error",
       message: "Invalid data type",
